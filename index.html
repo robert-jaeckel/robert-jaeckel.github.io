@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Dr. Robert Jäckel</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #111;
+      background-color: #ffffff;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background-color: #f2f2f2;
+      padding: 28px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .site-title {
+      font-size: 3.4rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 38px;
+      align-items: center;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px;
+    }
+
+    nav a:hover {
+      border-bottom: 1px solid #111;
+    }
+
+    main {
+      max-width: 1450px;
+      margin: 0 auto;
+      padding: 60px 5% 90px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 75px;
+    }
+
+    .hero-text {
+      font-size: 2.5rem;
+      line-height: 1.55;
+      letter-spacing: 1px;
+      max-width: 700px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 560px;
+      display: block;
+      margin-left: auto;
+    }
+
+    .intro-text {
+      font-size: 1.22rem;
+      line-height: 2.15;
+      letter-spacing: 0.5px;
+      max-width: 1250px;
+    }
+
+    .intro-text p {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 1000px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 6%;
+      }
+
+      .site-title {
+        font-size: 2.6rem;
+        white-space: normal;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 0.85rem;
+      }
+
+      main {
+        padding: 45px 6% 70px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-text {
+        font-size: 2rem;
+        line-height: 1.5;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .intro-text {
+        font-size: 1.08rem;
+        line-height: 1.95;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-title {
+        font-size: 2.1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .hero-text {
+        font-size: 1.55rem;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="site-title">Dr. Robert Jäckel</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#cv">Short CV</a>
+      <a href="#communication">Science Communication</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="hero-text">
+        Welcome to my professional space.<br>
+        Here, you can discover my journey<br>
+        and contributions to the fascinating<br>
+        field of fluids and energy.
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/profile.JPG" alt="Portrait of Dr. Robert Jäckel">
+      </div>
+    </section>
+
+    <section class="intro-text">
+      <p>
+        As a research scientist, I am deeply invested in exploring both the
+        fundamental and practical realms of transport phenomena. My expertise
+        particularly lies in fluid mechanics and energy technology, where I employ
+        both experimental and numerical methods.
+      </p>
+
+      <p>
+        Currently, I work as a professor and researcher in Rio de Janeiro, Brazil,
+        with research activities focused on experimental fluid mechanics,
+        turbulent flows, particle-laden flows, flow diagnostics, and
+        thermal-fluid applications.
+      </p>
+
+      <p>
+        My work connects fundamental investigations of flow physics with applied
+        problems in engineering, including pipe flows, fouling, multiphase systems,
+        heat transfer, and energy-related applications.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
