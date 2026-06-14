@@ -13,6 +13,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
@@ -33,6 +37,9 @@
       justify-content: space-between;
       align-items: center;
       gap: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .site-title {
@@ -44,9 +51,9 @@
 
     nav {
       display: flex;
-      gap: 38px;
+      gap: 28px;
       align-items: center;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -54,6 +61,7 @@
     nav a {
       border-bottom: 1px solid transparent;
       padding-bottom: 3px;
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -93,28 +101,127 @@
       line-height: 2.15;
       letter-spacing: 0.5px;
       max-width: 1250px;
+      margin-bottom: 100px;
     }
 
     .intro-text p {
       margin-bottom: 30px;
     }
 
-    @media (max-width: 1000px) {
+    .page-section {
+      padding: 85px 0;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin: 0 0 35px;
+    }
+
+    .subsection-title {
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin: 55px 0 18px;
+    }
+
+    .section-text {
+      font-size: 1.15rem;
+      line-height: 2;
+      letter-spacing: 0.4px;
+      max-width: 1150px;
+    }
+
+    .research-blocks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+      margin-top: 35px;
+    }
+
+    .research-card {
+      border: 1px solid #e0e0e0;
+      padding: 28px;
+      background-color: #fafafa;
+    }
+
+    .research-card h3 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 0 0 16px;
+    }
+
+    .research-card p {
+      margin: 0;
+    }
+
+    .publications {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 1200px;
+    }
+
+    .publications li {
+      margin-bottom: 28px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .publications a {
+      border-bottom: 1px solid #111;
+    }
+
+    .publication-title {
+      font-size: 1.12rem;
+    }
+
+    .publication-meta {
+      color: #444;
+    }
+
+    .year-heading {
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin: 40px 0 18px;
+    }
+
+    .placeholder {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 900px;
+    }
+
+    footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 35px 5%;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    @media (max-width: 1150px) {
       header {
         flex-direction: column;
         align-items: flex-start;
+        position: static;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      header {
         padding: 24px 6%;
       }
 
       .site-title {
         font-size: 2.6rem;
         white-space: normal;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 18px;
-        font-size: 0.85rem;
       }
 
       main {
@@ -141,6 +248,10 @@
         font-size: 1.08rem;
         line-height: 1.95;
       }
+
+      .research-blocks {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 560px) {
@@ -158,8 +269,18 @@
         font-size: 1.55rem;
       }
 
-      .intro-text {
+      .intro-text,
+      .section-text,
+      .placeholder {
         font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .subsection-title {
+        font-size: 1.45rem;
       }
     }
   </style>
@@ -172,9 +293,11 @@
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#research">Research</a>
-      <a href="#cv">Short CV</a>
-      <a href="#communication">Science Communication</a>
+      <a href="#research-publications">Research & Publications</a>
+      <a href="#teaching-supervision">Teaching & Supervision</a>
+      <a href="#consulting-patents">Consulting & Patents</a>
+      <a href="#outreach">Outreach</a>
+      <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -216,7 +339,197 @@
       </p>
     </section>
 
+    <section id="research-publications" class="page-section">
+      <h2 class="section-title">Research & Publications</h2>
+
+      <div class="section-text">
+        <h3 class="subsection-title">Research</h3>
+
+        <p>
+          My research combines experimental fluid mechanics, flow diagnostics,
+          modelling, and simulation to study transport phenomena in engineering
+          systems. The work ranges from turbulent and particle-laden flows relevant
+          to flow assurance to thermal-fluid problems in renewable energy and
+          energy storage.
+        </p>
+
+        <div class="research-blocks">
+          <div class="research-card">
+            <h3>Experimental Fluid Mechanics, Flow Diagnostics & Flow Assurance</h3>
+            <p>
+              My main research area is experimental fluid mechanics applied to flow
+              assurance problems. I investigate turbulent and particle-laden flows,
+              internal flows, entrance effects, pressure losses, fouling, scaling,
+              and deposition. This work combines advanced flow diagnostics such as
+              PIV, SPIV, LDA, PDA, and pressure measurements with statistical data
+              analysis and uncertainty quantification.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Renewable Energy & Energy Storage</h3>
+            <p>
+              A second research line focuses on renewable energy and energy storage
+              systems, mainly through modelling and numerical simulation. I study
+              heat transfer, phase-change materials, passive thermal management,
+              solar-thermal applications, and energy-efficient systems, with
+              emphasis on understanding thermal behavior and supporting design
+              decisions.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Selected Journal Publications</h3>
+
+        <h4 class="year-heading">2026</h4>
+        <ul class="publications">
+          <li>
+            <strong>C. Monreal Jiménez, J. Rojas Ricca, R. Jäckel, J. A. Araoz Ramos, G. Barrios, A. Ramos Blanco, and G. Gutiérrez-Urueta.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.3390/resources15040051" target="_blank">
+              Enhancing Solar Thermal Resource Continuity in Mexican Climates Using PCM-Based Thermal Energy Storage: Transient Modeling and Performance Comparison.
+            </a><br>
+            <span class="publication-meta"><em>Resources</em> 15(4), 51, 2026. DOI: 10.3390/resources15040051.</span>
+          </li>
+
+          <li>
+            <strong>C. Monreal Jiménez, A. Jiménez-Godoy, G. Barrios, R. Jäckel, A. Ramos Blanco, and G. Gutiérrez-Urueta.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.3390/buildings16061245" target="_blank">
+              Generalization of Machine Learning Surrogates Across Building Orientation and Roof Solar Absorptance in Naturally Ventilated Dwellings.
+            </a><br>
+            <span class="publication-meta"><em>Buildings</em> 16(6), 1245, 2026. DOI: 10.3390/buildings16061245.</span>
+          </li>
+        </ul>
+
+        <h4 class="year-heading">2025</h4>
+        <ul class="publications">
+          <li>
+            <strong>B. E. Owolabi, R. Jäckel, L. Moriconi, and J. B. R. Loureiro.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1063/5.0292384" target="_blank">
+              Large heavy particles in turbulent pipe flows: Skin friction drag, turbulence modulation and preferential particle distribution.
+            </a><br>
+            <span class="publication-meta"><em>Physics of Fluids</em> 37, 113337, 2025. DOI: 10.1063/5.0292384.</span>
+          </li>
+
+          <li>
+            <strong>C. Avilés-Cruz, M. Magos-Rivera, R. Jäckel, H. Puebla, and J. Ramírez-Muñoz.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1016/j.flowmeasinst.2025.102958" target="_blank">
+              Deep learning model for flow regime identification in mixing tanks from pressure signals.
+            </a><br>
+            <span class="publication-meta"><em>Flow Measurement and Instrumentation</em> 106, 102958, 2025. DOI: 10.1016/j.flowmeasinst.2025.102958.</span>
+          </li>
+
+          <li>
+            <strong>S. Ayala-Zambrano, R. Jäckel, G. L. Gutiérrez-Urueta, A. Ramos Blanco, and C. Monreal Jiménez.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1016/j.est.2024.115239" target="_blank">
+              Parametric optimization of cylindrical vaccine transport containers with dual phase change materials to prevent vaccine freezing and heat damage using artificial neural networks.
+            </a><br>
+            <span class="publication-meta"><em>Journal of Energy Storage</em> 109, 115239, 2025. DOI: 10.1016/j.est.2024.115239.</span>
+          </li>
+        </ul>
+
+        <h4 class="year-heading">2024</h4>
+        <ul class="publications">
+          <li>
+            <strong>R. Jäckel, B. Magacho, B. E. Owolabi, L. Moriconi, and J. B. R. Loureiro.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1016/j.ijheatfluidflow.2024.109585" target="_blank">
+              Experimental characterization of coherent states in turbulent magnetohydrodynamic pipe flow.
+            </a><br>
+            <span class="publication-meta"><em>International Journal of Heat and Fluid Flow</em> 110, 109585, 2024. DOI: 10.1016/j.ijheatfluidflow.2024.109585.</span>
+          </li>
+
+          <li>
+            <strong>B. G. Gamboa-Loya, R. Jäckel, G. L. Gutiérrez-Urueta, C. Monreal-Jiménez, J. E. Rojas-Ricca, and R. Peña-Gallardo.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.24275/rmiq/IE24351" target="_blank">
+              Assessment of thermal comfort with phase change materials in a standard house for different Mexican climates: a simulation study using EnergyPlus.
+            </a><br>
+            <span class="publication-meta"><em>Revista Mexicana de Ingeniería Química</em> 23(3), IE24351, 2024. DOI: 10.24275/rmiq/IE24351.</span>
+          </li>
+        </ul>
+
+        <h4 class="year-heading">2023</h4>
+        <ul class="publications">
+          <li>
+            <strong>R. Jäckel, B. Magacho, B. E. Owolabi, L. Moriconi, D. J. C. Dennis, and J. B. R. Loureiro.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1103/PhysRevFluids.8.064609" target="_blank">
+              Stochastic model of organizational state transitions in a turbulent pipe flow.
+            </a><br>
+            <span class="publication-meta"><em>Physical Review Fluids</em> 8, 064609, 2023. DOI: 10.1103/PhysRevFluids.8.064609.</span>
+          </li>
+
+          <li>
+            <strong>R. Jäckel, B. Magacho, B. E. Owolabi, L. Moriconi, D. J. C. Dennis, and J. B. R. Loureiro.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1063/5.0143815" target="_blank">
+              Coherent organizational states in turbulent pipe flow at moderate Reynolds numbers.
+            </a><br>
+            <span class="publication-meta"><em>Physics of Fluids</em> 35, 045127, 2023. DOI: 10.1063/5.0143815.</span>
+          </li>
+        </ul>
+
+        <h4 class="year-heading">2021</h4>
+        <ul class="publications">
+          <li>
+            <strong>R. Jäckel, G. Gutiérrez-Urueta, and F. Tapia.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1016/j.flowmeasinst.2021.102033" target="_blank">
+              A review on Pitot tube icing in aeronautics: Research, design and characterization — future trends.
+            </a><br>
+            <span class="publication-meta"><em>Flow Measurement and Instrumentation</em> 81, 102033, 2021. DOI: 10.1016/j.flowmeasinst.2021.102033.</span>
+          </li>
+        </ul>
+
+        <h4 class="year-heading">2020</h4>
+        <ul class="publications">
+          <li>
+            <strong>R. Jäckel, F. Tapia, G. Gutiérrez-Urueta, and C. Monreal Jiménez.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1016/j.flowmeasinst.2020.101817" target="_blank">
+              Design of an aeronautic Pitot probe with a redundant heating system incorporating phase change materials.
+            </a><br>
+            <span class="publication-meta"><em>Flow Measurement and Instrumentation</em> 76, 101817, 2020. DOI: 10.1016/j.flowmeasinst.2020.101817.</span>
+          </li>
+        </ul>
+
+        <h4 class="year-heading">2019</h4>
+        <ul class="publications">
+          <li>
+            <strong>R. Jäckel, G. L. Gutiérrez Urueta, F. Tapia Rodríguez, and C. Monreal Jiménez.</strong><br>
+            <a class="publication-title" href="https://doi.org/10.1017/aer.2019.33" target="_blank">
+              Numerical and experimental characterisation of an aeronautic Pitot probe.
+            </a><br>
+            <span class="publication-meta"><em>The Aeronautical Journal</em> 123(1264), 890–911, 2019. DOI: 10.1017/aer.2019.33.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="teaching-supervision" class="page-section">
+      <h2 class="section-title">Teaching & Supervision</h2>
+      <p class="placeholder">Content coming soon.</p>
+    </section>
+
+    <section id="consulting-patents" class="page-section">
+      <h2 class="section-title">Consulting & Patents</h2>
+      <p class="placeholder">Content coming soon.</p>
+    </section>
+
+    <section id="outreach" class="page-section">
+      <h2 class="section-title">Science Communication & Outreach</h2>
+      <p class="placeholder">Content coming soon.</p>
+    </section>
+
+    <section id="cv" class="page-section">
+      <h2 class="section-title">CV</h2>
+      <p class="placeholder">Content coming soon.</p>
+    </section>
+
+    <section id="contact" class="page-section">
+      <h2 class="section-title">Contact</h2>
+      <p class="placeholder">Content coming soon.</p>
+    </section>
+
   </main>
+
+  <footer>
+    © 2026 Robert Jäckel
+  </footer>
 
 </body>
 </html>
