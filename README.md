@@ -1,2 +1,2 @@
 # robert-jaeckel.github.io
-Personal academic website of Robert Jäckel
+Personal academic site of Robert Jäckel
