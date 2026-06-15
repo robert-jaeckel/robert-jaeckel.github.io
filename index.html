@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,10 @@
   <title>Dr. Robert Jäckel</title>
 
   <style>
+    /* =========================================================
+       GLOBAL SETTINGS
+    ========================================================= */
+
     * {
       box-sizing: border-box;
     }
@@ -27,6 +32,11 @@
       color: inherit;
       text-decoration: none;
     }
+
+
+    /* =========================================================
+       HEADER AND NAVIGATION
+    ========================================================= */
 
     header {
       background-color: #f2f2f2;
@@ -66,11 +76,51 @@
       border-bottom: 1px solid #111;
     }
 
+
+    /* =========================================================
+       MAIN PAGE LAYOUT
+    ========================================================= */
+
     main {
       max-width: 1450px;
       margin: 0 auto;
       padding: 70px 5% 90px;
     }
+
+    .page-section {
+      padding: 85px 0;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin: 0 0 35px;
+    }
+
+    .subsection-title {
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin: 55px 0 18px;
+    }
+
+    .section-text {
+      font-size: 1.15rem;
+      line-height: 2;
+      letter-spacing: 0.4px;
+      max-width: 1150px;
+    }
+
+    .placeholder {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 900px;
+    }
+
+
+    /* =========================================================
+       HOME / HERO SECTION
+    ========================================================= */
 
     .hero {
       display: grid;
@@ -106,29 +156,10 @@
       margin-bottom: 30px;
     }
 
-    .page-section {
-      padding: 85px 0;
-      border-top: 1px solid #e5e5e5;
-    }
 
-    .section-title {
-      font-size: 2.4rem;
-      font-weight: 400;
-      margin: 0 0 35px;
-    }
-
-    .subsection-title {
-      font-size: 1.75rem;
-      font-weight: 400;
-      margin: 55px 0 18px;
-    }
-
-    .section-text {
-      font-size: 1.15rem;
-      line-height: 2;
-      letter-spacing: 0.4px;
-      max-width: 1150px;
-    }
+    /* =========================================================
+       RESEARCH & PUBLICATIONS SECTION
+    ========================================================= */
 
     .research-intro {
       display: grid;
@@ -200,11 +231,10 @@
       margin: 40px 0 18px;
     }
 
-    .placeholder {
-      font-size: 1.1rem;
-      color: #555;
-      max-width: 900px;
-    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
     footer {
       border-top: 1px solid #e5e5e5;
@@ -213,6 +243,11 @@
       font-size: 0.95rem;
       color: #555;
     }
+
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+    ========================================================= */
 
     @media (max-width: 1150px) {
       header {
@@ -309,7 +344,12 @@
   </style>
 </head>
 
+
 <body>
+
+  <!-- =========================================================
+       HEADER / NAVIGATION
+  ========================================================= -->
 
   <header>
     <div class="site-title">Dr. Robert Jäckel</div>
@@ -325,7 +365,12 @@
     </nav>
   </header>
 
+
   <main id="home">
+
+    <!-- =========================================================
+         HOME / HERO SECTION
+    ========================================================= -->
 
     <section class="hero">
       <div class="hero-text">
@@ -339,6 +384,11 @@
         <img src="assets/profile.JPG" alt="Portrait of Dr. Robert Jäckel">
       </div>
     </section>
+
+
+    <!-- =========================================================
+         HOME / INTRODUCTION TEXT
+    ========================================================= -->
 
     <section class="intro-text">
       <p>
@@ -362,10 +412,17 @@
       </p>
     </section>
 
+
+    <!-- =========================================================
+         RESEARCH & PUBLICATIONS SECTION
+    ========================================================= -->
+
     <section id="research-publications" class="page-section">
       <h2 class="section-title">Research & Publications</h2>
 
       <div class="section-text">
+
+        <!-- Research subsection -->
         <h3 class="subsection-title">Research</h3>
 
         <div class="research-intro">
@@ -410,6 +467,8 @@
           </div>
         </div>
 
+
+        <!-- Publications subsection -->
         <h3 class="subsection-title">Selected Journal Publications</h3>
 
         <h4 class="year-heading">2026</h4>
@@ -528,28 +587,54 @@
             <span class="publication-meta"><em>The Aeronautical Journal</em> 123(1264), 890–911, 2019. DOI: 10.1017/aer.2019.33.</span>
           </li>
         </ul>
+
       </div>
     </section>
+
+
+    <!-- =========================================================
+         TEACHING & SUPERVISION SECTION
+    ========================================================= -->
 
     <section id="teaching-supervision" class="page-section">
       <h2 class="section-title">Teaching & Supervision</h2>
       <p class="placeholder">Content coming soon.</p>
     </section>
 
+
+    <!-- =========================================================
+         CONSULTING & PATENTS SECTION
+    ========================================================= -->
+
     <section id="consulting-patents" class="page-section">
       <h2 class="section-title">Consulting & Patents</h2>
       <p class="placeholder">Content coming soon.</p>
     </section>
+
+
+    <!-- =========================================================
+         SCIENCE COMMUNICATION & OUTREACH SECTION
+    ========================================================= -->
 
     <section id="outreach" class="page-section">
       <h2 class="section-title">Science Communication & Outreach</h2>
       <p class="placeholder">Content coming soon.</p>
     </section>
 
+
+    <!-- =========================================================
+         CV SECTION
+    ========================================================= -->
+
     <section id="cv" class="page-section">
       <h2 class="section-title">CV</h2>
       <p class="placeholder">Content coming soon.</p>
     </section>
+
+
+    <!-- =========================================================
+         CONTACT SECTION
+    ========================================================= -->
 
     <section id="contact" class="page-section">
       <h2 class="section-title">Contact</h2>
@@ -557,6 +642,11 @@
     </section>
 
   </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
 
   <footer>
     © 2026 Robert Jäckel
