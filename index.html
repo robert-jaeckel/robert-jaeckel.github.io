@@ -921,89 +921,39 @@
 </section>
 
 
-<!-- =========================================================
-     CONTACT SECTION
-========================================================= -->
+/* =========================================================
+   CONTACT SECTION / LOGO LINKS
+========================================================= */
 
-<section id="contact" class="page-section">
-  <h2 class="section-title">Contact</h2>
+.logo-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+  margin-top: 25px;
+}
 
-  <div class="section-text">
-    <p>
-      <strong>Area:</strong> Thermosciences
-    </p>
+.logo-links a {
+  width: 150px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+  overflow: hidden;
+}
 
-    <p>
-      <strong>Institutional e-mail:</strong>
-      robert.jaeckel [at] eng.uerj.br
-    </p>
+.logo-links img {
+  width: 130px !important;
+  height: 70px !important;
+  object-fit: contain !important;
+  display: block;
+  transition: transform 0.2s ease;
+}
 
-    <p>
-      For academic collaborations, student supervision, consulting inquiries,
-      or technical projects, please contact me by e-mail or through one of the
-      academic profiles listed below.
-    </p>
-
-    <h3 class="subsection-title">Academic Profiles</h3>
-
-    <ul>
-      <li style="margin-bottom: 14px;">
-        <strong>Lattes Curriculum:</strong>
-        <a href="http://lattes.cnpq.br/8702041223970357" target="_blank" rel="noopener noreferrer">
-          lattes.cnpq.br/8702041223970357
-        </a>
-      </li>
-
-      <li style="margin-bottom: 14px;">
-        <strong>ORCID:</strong>
-        <a href="https://orcid.org/0000-0002-6445-9350" target="_blank" rel="noopener noreferrer">
-          orcid.org/0000-0002-6445-9350
-        </a>
-      </li>
-
-      <li style="margin-bottom: 14px;">
-        <strong>Scopus:</strong>
-        <a href="https://www.scopus.com/authid/detail.uri?authorId=57211430951" target="_blank" rel="noopener noreferrer">
-          Scopus Author Profile
-        </a>
-      </li>
-
-      <li style="margin-bottom: 14px;">
-        <strong>Google Scholar:</strong>
-        <a href="https://scholar.google.com/citations?user=kk59NBoAAAAJ&hl=pt-BR&oi=ao" target="_blank" rel="noopener noreferrer">
-          Google Scholar Profile
-        </a>
-      </li>
-
-      <li style="margin-bottom: 14px;">
-        <strong>ResearchGate:</strong>
-        <a href="https://www.researchgate.net/profile/Robert-Jaeckel" target="_blank" rel="noopener noreferrer">
-          ResearchGate Profile
-        </a>
-      </li>
-    </ul>
-
-    <h3 class="subsection-title">Institutional Links</h3>
-
-    <div class="logo-links">
-      <a href="https://www.nidf.ufrj.br/" target="_blank" rel="noopener noreferrer" aria-label="NIDF">
-        <img src="assets/logo_nidf.png" alt="NIDF logo">
-      </a>
-
-      <a href="https://www.mecanica.uerj.br/" target="_blank" rel="noopener noreferrer" aria-label="Department of Mechanical Engineering, UERJ">
-        <img src="assets/logo-mecanuerj.png" alt="Department of Mechanical Engineering, UERJ logo">
-      </a>
-
-      <a href="https://www.ppgem.uerj.br/" target="_blank" rel="noopener noreferrer" aria-label="PPGEM UERJ">
-        <img src="assets/LogoPPGEM-color.png" alt="PPGEM UERJ logo">
-      </a>
-
-      <a href="https://www.uerj.br/" target="_blank" rel="noopener noreferrer" aria-label="UERJ">
-        <img src="assets/Logo-UERJ.png" alt="UERJ logo">
-      </a>
-    </div>
-  </div>
-</section>
+.logo-links img:hover {
+  transform: scale(1.04);
+}
 
   <!-- =========================================================
        FOOTER
