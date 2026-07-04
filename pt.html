@@ -1,1 +1,1105 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dr. Robert Jäckel</title>
+
+  <style>
+    /* =========================================================
+       GLOBAL SETTINGS
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #111;
+      background-color: #ffffff;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       IMAGE FRAMES
+    ========================================================= */
+
+    img {
+      border: 1px solid #d0d0d0;
+      padding: 8px;
+      background-color: #f2f2f2;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+
+    /* =========================================================
+       HEADER AND NAVIGATION
+    ========================================================= */
+
+    header {
+      background-color: #f2f2f2;
+      padding: 24px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-title {
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      border-bottom: 1px solid #111;
+    }
+
+    .language-switch {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-left: 10px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .language-switch span:first-child {
+      font-weight: bold;
+    }
+
+    .language-switch .active {
+      font-weight: bold;
+    }
+
+
+    /* =========================================================
+       MAIN PAGE LAYOUT
+    ========================================================= */
+
+    main {
+      max-width: 1450px;
+      margin: 0 auto;
+      padding: 70px 5% 90px;
+    }
+
+    .page-section {
+      padding: 85px 0;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin: 0 0 35px;
+    }
+
+    .subsection-title {
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin: 55px 0 18px;
+    }
+
+    .section-text {
+      font-size: 1.15rem;
+      line-height: 2;
+      letter-spacing: 0.4px;
+      max-width: 1150px;
+    }
+
+    .placeholder {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 900px;
+    }
+
+
+    /* =========================================================
+       HOME / HERO SECTION
+    ========================================================= */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 90px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .hero-text {
+      font-size: 2.35rem;
+      line-height: 1.5;
+      letter-spacing: 0.8px;
+      max-width: 720px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 390px;
+      display: block;
+      margin-left: auto;
+    }
+
+    .intro-text {
+      font-size: 1.22rem;
+      line-height: 2.15;
+      letter-spacing: 0.5px;
+      max-width: 1250px;
+      margin-bottom: 100px;
+    }
+
+    .intro-text p {
+      margin-bottom: 30px;
+    }
+
+
+    /* =========================================================
+       RESEARCH & PUBLICATIONS SECTION
+    ========================================================= */
+
+    .research-intro {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    .research-intro-image img {
+      width: 100%;
+      max-width: none;
+      display: block;
+      margin-left: auto;
+    }
+
+    .research-blocks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+      margin-top: 35px;
+    }
+
+    .research-card {
+      border: 1px solid #e0e0e0;
+      padding: 28px;
+      background-color: #fafafa;
+    }
+
+    .research-card h3 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 0 0 16px;
+    }
+
+    .research-card p {
+      margin: 0;
+    }
+
+    .publications {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 1200px;
+    }
+
+    .publications li {
+      margin-bottom: 28px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .publications a {
+      border-bottom: 1px solid #111;
+    }
+
+    .publication-title {
+      font-size: 1.12rem;
+    }
+
+    .publication-meta {
+      color: #444;
+    }
+
+    .year-heading {
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin: 40px 0 18px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 35px 5%;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+    ========================================================= */
+
+    @media (max-width: 1150px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        position: static;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      header {
+        padding: 22px 6%;
+      }
+
+      .site-title {
+        font-size: 2.45rem;
+        white-space: normal;
+      }
+
+      main {
+        padding: 45px 6% 70px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-text {
+        font-size: 2rem;
+        line-height: 1.5;
+        max-width: 100%;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .intro-text {
+        font-size: 1.08rem;
+        line-height: 1.95;
+      }
+
+      .research-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .research-intro-image img {
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .research-blocks {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-title {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .hero-text {
+        font-size: 1.55rem;
+      }
+
+      .intro-text,
+      .section-text,
+      .placeholder {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .subsection-title {
+        font-size: 1.45rem;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================================================
+       HEADER / NAVIGATION
+  ========================================================= -->
+
+  <header>
+    <div class="site-title">Dr. Robert Jäckel</div>
+
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#research-publications">Pesquisa & Publicações</a>
+      <a href="#teaching-supervision">Ensino & Orientação</a>
+      <a href="#consulting-patents">Consultoria & Patentes</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contato</a>
+
+      <span class="language-switch">
+        <a href="index.html">EN</a>
+        <span>|</span>
+        <span class="active">PT</span>
+      </span>
+    </nav>
+  </header>
+
+
+  <main id="home">
+
+    <!-- =========================================================
+         HOME / HERO SECTION
+    ========================================================= -->
+
+    <section class="hero">
+      <div class="hero-text">
+        Conectando mecânica dos fluidos,<br>
+        fenômenos de transporte e aplicações<br>
+        em energia por meio da pesquisa<br>
+        e do ensino.
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/profile.JPG" alt="Retrato do Dr. Robert Jäckel">
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HOME / INTRODUCTION TEXT
+    ========================================================= -->
+
+    <section class="intro-text">
+      <p>
+        Como pesquisador, tenho especial interesse em investigar tanto os
+        aspectos fundamentais quanto as aplicações práticas dos fenômenos de
+        transporte. Minha experiência concentra-se principalmente em mecânica dos
+        fluidos e tecnologia energética, utilizando métodos experimentais e
+        numéricos.
+      </p>
+
+      <p>
+        Atualmente, atuo como professor e pesquisador na Universidade do Estado
+        do Rio de Janeiro, Brasil, com atividades de pesquisa voltadas para
+        mecânica dos fluidos experimental, escoamentos turbulentos, escoamentos
+        com partículas, diagnósticos de escoamento e aplicações termo-fluidas.
+      </p>
+
+      <p>
+        Meu trabalho conecta investigações fundamentais da física dos escoamentos
+        com problemas aplicados de engenharia, incluindo escoamentos em tubulações,
+        incrustações, sistemas multifásicos, transferência de calor e aplicações
+        relacionadas à energia.
+      </p>
+    </section>
+
+<!-- =========================================================
+     RESEARCH & PUBLICATIONS SECTION
+========================================================= -->
+
+<section id="research-publications" class="page-section">
+  <h2 class="section-title">Pesquisa & Publicações</h2>
+
+  <div class="section-text">
+
+    <h3 class="subsection-title">Pesquisa</h3>
+
+    <div class="research-intro">
+      <div>
+        <p>
+          Minha pesquisa combina mecânica dos fluidos experimental, diagnósticos
+          de escoamento, modelagem e simulação para estudar fenômenos de
+          transporte em sistemas de engenharia. O trabalho abrange desde
+          escoamentos turbulentos e com partículas, relevantes para garantia de
+          escoamento, até problemas termo-fluidos em energias renováveis e
+          armazenamento de energia.
+        </p>
+      </div>
+
+      <div class="research-intro-image">
+        <img src="assets/research.png" alt="Atividade de pesquisa experimental">
+      </div>
+    </div>
+
+    <div class="research-blocks">
+      <div class="research-card">
+        <h3>Mecânica dos Fluidos Experimental, Diagnósticos de Escoamento & Garantia de Escoamento</h3>
+        <p>
+          Minha principal área de pesquisa é a mecânica dos fluidos experimental
+          aplicada a problemas de garantia de escoamento. Investigo escoamentos
+          turbulentos e com partículas, estruturas coerentes, efeitos de entrada,
+          incrustações e deposição. Este trabalho combina diagnósticos avançados
+          de escoamento, como PIV, LDA e medições de escoamento, com análise
+          estatística avançada de dados.
+        </p>
+      </div>
+
+      <div class="research-card">
+        <h3>Energias Renováveis & Armazenamento de Energia</h3>
+        <p>
+          Uma segunda linha de pesquisa concentra-se em energias renováveis e
+          sistemas de armazenamento de energia, principalmente por meio de
+          modelagem e simulação numérica. Estudo transferência de calor, materiais
+          de mudança de fase, gerenciamento térmico passivo, aplicações
+          solar-térmicas e sistemas energeticamente eficientes, com ênfase na
+          compreensão do comportamento térmico e no apoio a decisões de projeto.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin: 45px auto 10px; width: 100%; max-width: 560px;">
+      <img src="assets/research_PIV.png" alt="Montagem experimental de PIV"
+           style="width: 100%; height: auto; display: block;">
+    </div>
+
+
+    <h3 class="subsection-title">Publicações Selecionadas em Periódicos</h3>
+
+    <h4 class="year-heading">2026</h4>
+    <ul class="publications">
+      <li>
+        <strong>C. Monreal Jiménez, J. Rojas Ricca, R. Jäckel, J. A. Araoz Ramos, G. Barrios, A. Ramos Blanco, and G. Gutiérrez-Urueta.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.3390/resources15040051" target="_blank">
+          Enhancing Solar Thermal Resource Continuity in Mexican Climates Using PCM-Based Thermal Energy Storage: Transient Modeling and Performance Comparison.
+        </a><br>
+        <span class="publication-meta"><em>Resources</em> 15(4), 51, 2026. DOI: 10.3390/resources15040051.</span>
+      </li>
+
+      <li>
+        <strong>C. Monreal Jiménez, A. Jiménez-Godoy, G. Barrios, R. Jäckel, A. Ramos Blanco, and G. Gutiérrez-Urueta.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.3390/buildings16061245" target="_blank">
+          Generalization of Machine Learning Surrogates Across Building Orientation and Roof Solar Absorptance in Naturally Ventilated Dwellings.
+        </a><br>
+        <span class="publication-meta"><em>Buildings</em> 16(6), 1245, 2026. DOI: 10.3390/buildings16061245.</span>
+      </li>
+    </ul>
+
+    <h4 class="year-heading">2025</h4>
+    <ul class="publications">
+      <li>
+        <strong>B. E. Owolabi, R. Jäckel, L. Moriconi, and J. B. R. Loureiro.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1063/5.0292384" target="_blank">
+          Large heavy particles in turbulent pipe flows: Skin friction drag, turbulence modulation and preferential particle distribution.
+        </a><br>
+        <span class="publication-meta"><em>Physics of Fluids</em> 37, 113337, 2025. DOI: 10.1063/5.0292384.</span>
+      </li>
+
+      <li>
+        <strong>C. Avilés-Cruz, M. Magos-Rivera, R. Jäckel, H. Puebla, and J. Ramírez-Muñoz.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1016/j.flowmeasinst.2025.102958" target="_blank">
+          Deep learning model for flow regime identification in mixing tanks from pressure signals.
+        </a><br>
+        <span class="publication-meta"><em>Flow Measurement and Instrumentation</em> 106, 102958, 2025. DOI: 10.1016/j.flowmeasinst.2025.102958.</span>
+      </li>
+
+      <li>
+        <strong>S. Ayala-Zambrano, R. Jäckel, G. L. Gutiérrez-Urueta, A. Ramos Blanco, and C. Monreal Jiménez.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1016/j.est.2024.115239" target="_blank">
+          Parametric optimization of cylindrical vaccine transport containers with dual phase change materials to prevent vaccine freezing and heat damage using artificial neural networks.
+        </a><br>
+        <span class="publication-meta"><em>Journal of Energy Storage</em> 109, 115239, 2025. DOI: 10.1016/j.est.2024.115239.</span>
+      </li>
+    </ul>
+
+    <h4 class="year-heading">2024</h4>
+    <ul class="publications">
+      <li>
+        <strong>R. Jäckel, B. Magacho, B. E. Owolabi, L. Moriconi, and J. B. R. Loureiro.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1016/j.ijheatfluidflow.2024.109585" target="_blank">
+          Experimental characterization of coherent states in turbulent magnetohydrodynamic pipe flow.
+        </a><br>
+        <span class="publication-meta"><em>International Journal of Heat and Fluid Flow</em> 110, 109585, 2024. DOI: 10.1016/j.ijheatfluidflow.2024.109585.</span>
+      </li>
+
+      <li>
+        <strong>B. G. Gamboa-Loya, R. Jäckel, G. L. Gutiérrez-Urueta, C. Monreal-Jiménez, J. E. Rojas-Ricca, and R. Peña-Gallardo.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.24275/rmiq/IE24351" target="_blank">
+          Assessment of thermal comfort with phase change materials in a standard house for different Mexican climates: a simulation study using EnergyPlus.
+        </a><br>
+        <span class="publication-meta"><em>Revista Mexicana de Ingeniería Química</em> 23(3), IE24351, 2024. DOI: 10.24275/rmiq/IE24351.</span>
+      </li>
+    </ul>
+
+    <h4 class="year-heading">2023</h4>
+    <ul class="publications">
+      <li>
+        <strong>R. Jäckel, B. Magacho, B. E. Owolabi, L. Moriconi, D. J. C. Dennis, and J. B. R. Loureiro.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1103/PhysRevFluids.8.064609" target="_blank">
+          Stochastic model of organizational state transitions in a turbulent pipe flow.
+        </a><br>
+        <span class="publication-meta"><em>Physical Review Fluids</em> 8, 064609, 2023. DOI: 10.1103/PhysRevFluids.8.064609.</span>
+      </li>
+
+      <li>
+        <strong>R. Jäckel, B. Magacho, B. E. Owolabi, L. Moriconi, D. J. C. Dennis, and J. B. R. Loureiro.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1063/5.0143815" target="_blank">
+          Coherent organizational states in turbulent pipe flow at moderate Reynolds numbers.
+        </a><br>
+        <span class="publication-meta"><em>Physics of Fluids</em> 35, 045127, 2023. DOI: 10.1063/5.0143815.</span>
+      </li>
+    </ul>
+
+    <h4 class="year-heading">2021</h4>
+    <ul class="publications">
+      <li>
+        <strong>R. Jäckel, G. Gutiérrez-Urueta, and F. Tapia.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1016/j.flowmeasinst.2021.102033" target="_blank">
+          A review on Pitot tube icing in aeronautics: Research, design and characterization — future trends.
+        </a><br>
+        <span class="publication-meta"><em>Flow Measurement and Instrumentation</em> 81, 102033, 2021. DOI: 10.1016/j.flowmeasinst.2021.102033.</span>
+      </li>
+    </ul>
+
+    <h4 class="year-heading">2020</h4>
+    <ul class="publications">
+      <li>
+        <strong>R. Jäckel, F. Tapia, G. Gutiérrez-Urueta, and C. Monreal Jiménez.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1016/j.flowmeasinst.2020.101817" target="_blank">
+          Design of an aeronautic Pitot probe with a redundant heating system incorporating phase change materials.
+        </a><br>
+        <span class="publication-meta"><em>Flow Measurement and Instrumentation</em> 76, 101817, 2020. DOI: 10.1016/j.flowmeasinst.2020.101817.</span>
+      </li>
+    </ul>
+
+    <h4 class="year-heading">2019</h4>
+    <ul class="publications">
+      <li>
+        <strong>R. Jäckel, G. L. Gutiérrez Urueta, F. Tapia Rodríguez, and C. Monreal Jiménez.</strong><br>
+        <a class="publication-title" href="https://doi.org/10.1017/aer.2019.33" target="_blank">
+          Numerical and experimental characterisation of an aeronautic Pitot probe.
+        </a><br>
+        <span class="publication-meta"><em>The Aeronautical Journal</em> 123(1264), 890–911, 2019. DOI: 10.1017/aer.2019.33.</span>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+    <!-- =========================================================
+         TEACHING & SUPERVISION SECTION
+    ========================================================= -->
+
+    <section id="teaching-supervision" class="page-section">
+      <h2 class="section-title">Ensino & Orientação</h2>
+
+      <div class="section-text">
+
+        <h3 class="subsection-title">Ensino</h3>
+
+        <ul>
+          <li style="margin-bottom: 22px;">
+            <strong>2026.1:</strong>
+            Métodos Experimentais em Transferência de Calor e Massa
+            [Experimental Methods in Heat and Mass Transfer],
+            Programa de Pós-graduação em Engenharia Mecânica (PPGEM), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2026.1:</strong>
+            Fundamentos de Transferência de Calor e Massa
+            [Fundamentals of Heat and Mass Transfer],
+            Departamento de Engenharia Sanitária e Meio Ambiente (DESMA), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2026.1:</strong>
+            Mecânica dos Fluidos 3
+            [Fluid Mechanics III],
+            Faculdade de Oceanografia (FAOC), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2025.2:</strong>
+            Fundamentos de Transferência de Calor e Massa
+            [Fundamentals of Heat and Mass Transfer],
+            Departamento de Engenharia Sanitária e Meio Ambiente (DESMA), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2025.2:</strong>
+            Mecânica dos Fluidos 3
+            [Fluid Mechanics III],
+            Faculdade de Oceanografia (FAOC), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2025.2:</strong>
+            Fenômenos de Transporte
+            [Transport Phenomena],
+            Faculdade de Engenharia (FEN), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2025.2:</strong>
+            Fundamentos de Camada Limite
+            [Fundamentals of Boundary Layers],
+            Programa de Pós-graduação em Engenharia Mecânica (PPGEM), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2025.1:</strong>
+            Fundamentos de Transferência de Calor e Massa
+            [Fundamentals of Heat and Mass Transfer],
+            Departamento de Engenharia Sanitária e Meio Ambiente (DESMA), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2025.1:</strong>
+            Mecânica dos Fluidos 3
+            [Fluid Mechanics III],
+            Faculdade de Oceanografia (FAOC), UERJ.
+          </li>
+
+          <li style="margin-bottom: 22px;">
+            <strong>2022.2:</strong>
+            Técnicas Experimentales en Termofluidos
+            [Experimental Techniques in Thermofluids],
+            Programa de Pós-graduação em Engenharia Mecânica, Universidad Autónoma de San Luis Potosí (UASLP), México.
+          </li>
+        </ul>
+
+        <h3 class="subsection-title">Orientação de Estudantes</h3>
+
+        <h4 class="year-heading">Orientações em Andamento</h4>
+
+        <ul>
+          <li style="margin-bottom: 28px;">
+            <strong>Karolyna Gomes dos Santos</strong> — Tese de doutorado<br>
+            <em>Análise Experimental de uma Válvula AICD Circunscrita em Caixa de Acrílico Utilizando Técnicas de PIV</em>
+            [Experimental analysis of an AICD valve enclosed in an acrylic box using PIV techniques].<br>
+            Universidade Federal do Rio de Janeiro, Brasil.<br>
+            Coorientação com a Profa. Juliana Rodrigues Braga Loureiro.<br>
+            <strong>Período:</strong> 2025–2029, previsto.
+          </li>
+
+  
+
+          <li style="margin-bottom: 28px;">
+            <strong>Lorena de Azeredo Leite Souza</strong> — Dissertação de mestrado<br>
+            <em>Heat Transfer Modeling in Phase Change Materials via the Generalized Integral Transform Technique</em>.<br>
+            Universidade do Estado do Rio de Janeiro, Brasil.<br>
+            Coorientação com o Prof. Daniel Chalhub.<br>
+            <strong>Período:</strong> 2026–2028, previsto.
+          </li>
+
+          <li style="margin-bottom: 28px;">
+            <strong>Sandra Ayala-Zambrano</strong> — Tese de doutorado<br>
+            <em>Study and optimization of design parameters of vaccine transport boxes by means of experimental and numerical analysis</em>.<br>
+            Mechanical Engineering Program, Universidad Autónoma de San Luis Potosí, México.<br>
+            Coorientação com a Profa. Geydy Luz Gutiérrez Urueta.<br>
+            <strong>Período:</strong> 2022–2028, previsto.
+          </li>
+        </ul>
+
+        <h4 class="year-heading">Orientações Concluídas</h4>
+
+        <ul>
+
+        <li style="margin-bottom: 28px;">
+            <strong>Gustavo Prado Ferreira</strong> — Dissertação de mestrado<br>
+            <em>Estudo Experimental da Turboforese de Partículas Inerciais Densas em um Escoamento Sólido-Líquido Descendente</em>
+            [Experimental study of the turbophoresis of dense inertial particles in a descending solid-liquid flow].<br>
+            Universidade Federal do Rio de Janeiro, Brasil.<br>
+            Coorientação com a Profa. Juliana Rodrigues Braga Loureiro.<br>
+            <strong>Período:</strong> 2023–2026.
+          </li>
+
+          
+          <li style="margin-bottom: 28px;">
+            <strong>Brayan Gerardo Loya Gamboa</strong> — Dissertação de mestrado<br>
+            <em>Prediction of thermal comfort in Mexican homes integrating phase change materials using machine learning algorithms</em>.<br>
+            Mechanical Engineering Program, Universidad Autónoma de San Luis Potosí, México.<br>
+            Coorientação com a Profa. Geydy Luz Gutiérrez Urueta.<br>
+            <strong>Período:</strong> 2022–2024.
+          </li>
+
+          <li style="margin-bottom: 28px;">
+            <strong>Jonathan Eli Ricca Rojas</strong> — Dissertação de mestrado<br>
+            <em>Modeling and simulation of a solar Stirling engine with cogeneration incorporating phase change materials for continuous operation</em>.<br>
+            Mechanical Engineering Program, Universidad Autónoma de San Luis Potosí, México.<br>
+            Coorientação com a Profa. Geydy Luz Gutiérrez Urueta.<br>
+            <strong>Período:</strong> 2022–2024.
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         CONSULTING & PATENTS SECTION
+    ========================================================= -->
+
+    <section id="consulting-patents" class="page-section">
+      <h2 class="section-title">Consultoria & Patentes</h2>
+
+      <div class="section-text">
+        <p>
+          Meu trabalho aplicado inclui consultoria técnica, desenvolvimento de
+          patentes e pesquisa orientada à indústria em mecânica dos fluidos,
+          medição de escoamento, sistemas termo-fluidos e garantia de escoamento.
+          Essas atividades conectam a pesquisa experimental e numérica a desafios
+          práticos de engenharia, incluindo projeto de sensores, mitigação de gelo,
+          prevenção de incrustações e gerenciamento térmico.
+        </p>
+
+        <h3 class="subsection-title">Experiência em Consultoria</h3>
+
+        <div class="research-card" style="margin-bottom: 35px;">
+          <h3>Consultoria técnica em projeto e degelo de sondas de dados de ar</h3>
+
+          <p>
+            <strong>Cliente:</strong> Paul Hastings LLP, representando a Joby Aviation, Inc.<br>
+            <strong>Período:</strong> Novembro de 2025 – Março de 2026<br>
+            <strong>Área:</strong> sondas de dados de ar, sistemas Pitot, degelo,
+            análise termo-fluida, revisão técnica especializada
+          </p>
+
+          <p>
+            Esta consultoria envolveu suporte técnico especializado em conexão com
+            uma questão de litígio nos Estados Unidos relacionada a sondas de dados
+            de ar e seu projeto. O trabalho utilizou conhecimentos em sistemas de
+            tubo Pitot, projeto de sondas de dados de ar, conceitos de degelo e
+            anti-gelo, engenharia termo-fluida e medição de escoamento. A atividade
+            envolveu análise técnica independente e revisão de conceitos de engenharia
+            relacionados ao projeto de sondas de dados de ar e proteção térmica,
+            respeitando as obrigações de confidencialidade associadas ao caso.
+          </p>
+        </div>
+
+        <div class="research-card" style="margin-bottom: 35px;">
+          <h3>Análise térmica e apoio ao projeto de um sistema industrial de climatização</h3>
+
+          <p>
+            <strong>Cliente:</strong> Mabe Leiser S.A. de C.V.<br>
+            <strong>Período:</strong> Dezembro de 2023 – Junho de 2024<br>
+            <strong>Área:</strong> análise térmica, conforto térmico, modelagem e simulação
+          </p>
+
+          <p>
+            Este projeto de consultoria envolveu a análise térmica e a simulação de
+            variações de temperatura em uma instalação industrial. O trabalho incluiu
+            modelagem térmica com base em dados de processo, informações de
+            equipamentos e condições de escoamento de ar, bem como a avaliação do
+            conforto térmico em cenários típicos de operação no verão e no inverno.
+            O projeto resultou em um relatório técnico detalhado com recomendações
+            para manter a temperatura da instalação dentro de uma faixa de conforto
+            especificada.
+          </p>
+        </div>
+
+        <h3 class="subsection-title">Patentes</h3>
+
+        <div class="research-card" style="margin-bottom: 35px;">
+          <h3>Sistema magnético modular e método de prevenção de incrustações</h3>
+
+          <p>
+            <strong>Título original:</strong>
+            <em>Sistema magnético modular e método de prevenção de incrustações</em><br>
+            <strong>Patente:</strong> BR10202501845<br>
+            <strong>País:</strong> Brasil<br>
+            <strong>Status:</strong> Depositado, 29/08/2025<br>
+            <strong>Inventores:</strong> Robert Jäckel, Juliana B. R. Loureiro,
+            André S. Freire, Luca Moriconi
+          </p>
+
+          <p>
+            Esta patente descreve um sistema magnético modular e um método para
+            prevenção de incrustações. O conceito está associado ao uso de campos
+            magnéticos em escoamentos internos e busca influenciar processos de
+            transporte, deposição e formação de incrustações em sistemas de
+            engenharia. A aplicação é particularmente relevante para garantia de
+            escoamento, mitigação de incrustações inorgânicas, sistemas de tubulações
+            e transporte industrial de fluidos.
+          </p>
+        </div>
+
+        <div class="research-card" style="margin-bottom: 35px;">
+          <h3>Contêiner portátil cilíndrico equipado com dois PCMs para o transporte de produtos sensíveis à temperatura</h3>
+
+          <p>
+            <strong>Título original:</strong>
+            <em>Contenedor portátil cilíndrico equipado con dos PCMs para el transporte de productos sensibles a la temperatura</em><br>
+            <strong>Patente:</strong> MX/A/2025/006497<br>
+            <strong>País:</strong> México<br>
+            <strong>Status:</strong> Concedido, 28/05/2026<br>
+            <strong>Inventores:</strong> Sandra A. Zambrano, Robert Jäckel,
+            Alberto R. Blanco, Geydy L. Gutiérrez Urueta, Cintia Monreal Jiménez
+          </p>
+
+          <p>
+            Esta patente trata de um contêiner portátil cilíndrico equipado com dois
+            materiais de mudança de fase para o transporte de produtos sensíveis à
+            temperatura. O sistema foi concebido para reduzir tanto o risco de
+            superaquecimento quanto o de congelamento durante o transporte. O conceito
+            é relevante para logística de cadeia fria, transporte de vacinas, produtos
+            biomédicos e gerenciamento térmico passivo.
+          </p>
+        </div>
+
+        <div class="research-card" style="margin-bottom: 35px;">
+          <h3>Tubo Pitot aeronáutico com sistema de aquecimento auxiliar baseado em material de mudança de fase</h3>
+
+          <p>
+            <strong>Título original:</strong>
+            <em>Tubo Pitot aeronáutico con sistema de calefacción auxiliar basado en material de cambio de fase</em><br>
+            <strong>Patente:</strong> MX/A/2019/000720<br>
+            <strong>País:</strong> México<br>
+            <strong>Status:</strong> Concedido, 21/08/2023<br>
+            <strong>Inventores:</strong> Robert Jäckel, Fidencio Tapia Rodríguez,
+            Geydy Gutiérrez Urueta
+          </p>
+
+          <p>
+            Esta patente trata de um tubo Pitot aeronáutico equipado com um sistema
+            de aquecimento auxiliar baseado em material de mudança de fase. O conceito
+            foi desenvolvido para melhorar a proteção térmica e a confiabilidade
+            operacional em condições de formação de gelo, combinando aquecimento
+            convencional com armazenamento térmico passivo. O trabalho está relacionado
+            à segurança da medição de escoamento em aplicações aeronáuticas e ao
+            gerenciamento térmico de sondas de medição.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- =========================================================
+         CV SECTION
+    ========================================================= -->
+
+    <section id="cv" class="page-section">
+      <h2 class="section-title">CV</h2>
+
+      <div class="section-text">
+
+        <h3 class="subsection-title">Formação Acadêmica</h3>
+
+        <ul>
+          <li style="margin-bottom: 28px;">
+            <strong>2018–2023:</strong>
+            Doctor of Science (D.Sc.) in Mechanical Engineering,
+            Universidade Federal do Rio de Janeiro, Brasil.<br>
+            <strong>Tese:</strong> Study of coherent organizational states in
+            plain and magnetohydrodynamic pipe flow turbulence using SPIV.<br>
+            <strong>Orientadores:</strong> Profa. Juliana Rodrigues Braga Loureiro e
+            Prof. Luca Moriconi.
+          </li>
+
+          <li style="margin-bottom: 28px;">
+            <strong>2015–2018:</strong>
+            Master of Mechanical Engineering (M.Eng.) with focus on Thermofluids,
+            Universidad Autónoma de San Luis Potosí, México.<br>
+            <strong>Dissertação:</strong> Design of an aeronautic Pitot probe with a
+            redundant heating system incorporating phase change materials.<br>
+            <strong>Orientadora:</strong> Profa. Geydy Luz Gutiérrez Urueta.
+          </li>
+
+          <li style="margin-bottom: 28px;">
+            <strong>2010–2015:</strong>
+            Licentiate’s Degree in Mechanical Engineering with focus on Energy Technology,
+            Universidad Autónoma Metropolitana, México.<br>
+            <strong>Dissertação:</strong> Modeling and simulation of thermal comfort conditions
+            in a building using a passive acclimation system based on incorporated
+            phase change materials.<br>
+            <strong>Orientador:</strong> Prof. Jorge Ramírez Muñoz.
+          </li>
+        </ul>
+
+        <h3 class="subsection-title">Experiência Acadêmica e Industrial</h3>
+
+        <ul>
+          <li style="margin-bottom: 28px;">
+            <strong>2025–presente:</strong>
+            Professor de Engenharia Mecânica,
+            Universidade do Estado do Rio de Janeiro, Brasil.
+          </li>
+
+          <li style="margin-bottom: 28px;">
+            <strong>2023–2025:</strong>
+            Pesquisador de pós-doutorado em Engenharia Mecânica,
+            Universidade Federal do Rio de Janeiro, Brasil.
+          </li>
+
+          <li style="margin-bottom: 28px;">
+            <strong>2002–2006:</strong>
+            Formação profissional como Técnico em Mecatrônica,
+            Prinovis Ltd. & Co. KG, planta industrial de impressão, Ahrensburg, Alemanha.<br>
+            Durante essa formação, foram desenvolvidas competências em mecânica,
+            eletrônica e sistemas de controle. A formação proporcionou experiência
+            prática na instalação, operação e manutenção da cadeia de processos de
+            uma instalação industrial de grande escala.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+     CONTACT SECTION
+========================================================= -->
+
+<section id="contact" class="page-section">
+  <h2 class="section-title">Contato</h2>
+
+  <div class="section-text">
+    <p>
+      <strong>E-mail institucional:</strong>
+      robert.jaeckel [at] eng.uerj.br
+    </p>
+
+    <p>
+      Para colaborações acadêmicas, orientação de estudantes, demandas de
+      consultoria ou projetos técnicos, entre em contato por e-mail ou por meio
+      de um dos perfis acadêmicos listados abaixo.
+    </p>
+
+    <h3 class="subsection-title">Perfis Acadêmicos</h3>
+
+    <ul>
+      <li style="margin-bottom: 14px;">
+        <strong>Lattes Curriculum:</strong>
+        <a href="http://lattes.cnpq.br/8702041223970357" target="_blank" rel="noopener noreferrer">
+          lattes.cnpq.br/8702041223970357
+        </a>
+      </li>
+
+      <li style="margin-bottom: 14px;">
+        <strong>ORCID:</strong>
+        <a href="https://orcid.org/0000-0002-6445-9350" target="_blank" rel="noopener noreferrer">
+          orcid.org/0000-0002-6445-9350
+        </a>
+      </li>
+
+      <li style="margin-bottom: 14px;">
+        <strong>Scopus:</strong>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=57211430951" target="_blank" rel="noopener noreferrer">
+          Perfil de Autor no Scopus
+        </a>
+      </li>
+
+      <li style="margin-bottom: 14px;">
+        <strong>Google Scholar:</strong>
+        <a href="https://scholar.google.com/citations?user=kk59NBoAAAAJ&hl=pt-BR&oi=ao" target="_blank" rel="noopener noreferrer">
+          Perfil no Google Scholar
+        </a>
+      </li>
+
+      <li style="margin-bottom: 14px;">
+        <strong>ResearchGate:</strong>
+        <a href="https://www.researchgate.net/profile/Robert-Jaeckel" target="_blank" rel="noopener noreferrer">
+          Perfil no ResearchGate
+        </a>
+      </li>
+
+      <li style="margin-bottom: 14px;">
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/robert-j%C3%A4ckel-53460b17a/" target="_blank" rel="noopener noreferrer">
+          Perfil no LinkedIn
+        </a>
+      </li>
+    </ul>
+
+    <h3 class="subsection-title">Links Institucionais</h3>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-top: 25px;">
+
+      <a href="https://www.nidf.ufrj.br/" target="_blank" rel="noopener noreferrer" aria-label="NIDF"
+         style="width: 190px; height: 100px; display: flex; align-items: center; justify-content: center; border-bottom: none;">
+        <img src="assets/logo_nidf.png" alt="NIDF logo"
+             style="width: 170px !important; height: 85px !important; object-fit: contain !important; display: block !important; border: none !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important;">
+      </a>
+
+      <a href="https://www.mecanica.uerj.br/" target="_blank" rel="noopener noreferrer" aria-label="Department of Mechanical Engineering, UERJ"
+         style="width: 190px; height: 100px; display: flex; align-items: center; justify-content: center; border-bottom: none;">
+        <img src="assets/logo-mecanuerj.png" alt="Department of Mechanical Engineering, UERJ logo"
+             style="width: 170px !important; height: 85px !important; object-fit: contain !important; display: block !important; border: none !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important;">
+      </a>
+
+      <a href="https://www.ppgem.uerj.br/" target="_blank" rel="noopener noreferrer" aria-label="PPGEM UERJ"
+         style="width: 190px; height: 100px; display: flex; align-items: center; justify-content: center; border-bottom: none;">
+        <img src="assets/LogoPPGEM-color.png" alt="PPGEM UERJ logo"
+             style="width: 170px !important; height: 85px !important; object-fit: contain !important; display: block !important; border: none !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important;">
+      </a>
+
+      <a href="https://www.uerj.br/" target="_blank" rel="noopener noreferrer" aria-label="UERJ"
+         style="width: 190px; height: 100px; display: flex; align-items: center; justify-content: center; border-bottom: none;">
+        <img src="assets/Logo-UERJ.png" alt="UERJ logo"
+             style="width: 170px !important; height: 85px !important; object-fit: contain !important; display: block !important; border: none !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important;">
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer>
+    © 2026 Robert Jäckel
+  </footer>
+
+</body>
+</html>
